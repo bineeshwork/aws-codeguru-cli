@@ -1,0 +1,25 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - /usr/local/bin/dotnet-install.sh --channel LTS
+      - export PATH="$PATH:/root/.dotnet/tools"
+      - dotnet tool install -g AWS.CodeArtifact.NuGet.CredentialProvider
+      - dotnet codeartifact-creds install
+  pre_build:
+    commands:
+      - aws codeartifact login --tool dotnet --repository custom-nuget-store --domain test-domain --domain-owner 867001007349 --region us-east-1
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
+      - IMAGE_URI="${REPOSITORY_URI}:${TAG}"
+      - dotnet test
+  build:
+    commands:
+      - docker build --tag "$IMAGE_URI" .
+  post_build:
+    commands: 
+      - docker push "$IMAGE_URI"
+      - printf '[{"name":"dotnet-app","imageUri":"%s"}]' "$IMAGE_URI" > images.json
+      # dotnet nuget push ./bin/Release/*.nupkg -s https://test-domain-867001007349.d.codeartifact.us-east-1.amazonaws.com/nuget/nuget-store/v3/index.json --no-symbols true 
+artifacts:
+  files: images.json

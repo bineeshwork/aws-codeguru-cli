@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "RdQzq+NzDX1Waoo6KfgcFS35/IoPxNSrt9gbSCVvyHVBbzlXF/FFo0YCtYp86Y8eZ1Y2vN6CpSTK6IFU1UvCMg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\awsbin\\git\\BinHelloWord\\BinHelloWord\\BinHelloWord\\binhelloword\\BinHelloWord.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\awsbin\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
+    "C:\\Users\\awsbin\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
+    "C:\\Users\\awsbin\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\awsbin\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.11\\microsoft.netcore.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\awsbin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.11\\microsoft.windowsdesktop.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\awsbin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.11\\microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\awsbin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.11\\microsoft.netcore.app.host.win-x64.6.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}
